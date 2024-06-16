@@ -1,0 +1,38 @@
+// Define Roboto font family variable
+$roboto-font-family: "Roboto", sans-serif
+$roboto-thin-font-weight: 100
+
+
+//Define base style for Roboto font
+.roboto-base
+  font-family: $roboto-font-family
+  font-style: normal
+
+// Example 1: Thin font weight
+.roboto-thin
+  @extend .roboto-base // Inherit base styles
+  font-weight: $roboto-thin-font-weight
+
+
+// Example 2: Light font weight
+.roboto-light
+  @extend .roboto-base // Inherit base styles
+  font-weight: $roboto-thin-font-weight * 3
+
+
+// Example 3: Regular font weight
+.roboto-regular
+  @extend .roboto-base // Inherit base styles
+  font-weight: $roboto-thin-font-weight * 4
+
+
+// Example 4: Bold font weight
+.roboto-bold
+  @extend .roboto-base // Inherit base styles
+  font-weight: $roboto-thin-font-weight * 7
+
+/**  Usage examples:
+ * Example 1: <p class="roboto-thin">This is Roboto Thin text.</p>
+ * Example 2: <p class="roboto-light">This is Roboto Light text.</p>
+ * Example 3: <p class="roboto-regular">This is Roboto Regular text.</p>
+ */
