@@ -5,9 +5,9 @@
     <!-- slider image -------------------------------------->
     <div class="slider-item-bg">
       <img
-        [src]="'https://www.hdwallpapers.in/download/timothee_chalamet_zendaya_rebecca_ferguson_stellan_skarsgard_hd_dune_2-2560x1440.jpg'"
+        [src]="'https://media.gqmagazine.fr/photos/666c1673c06a06d54cf56aa5/16:9/w_2560%2Cc_limit/key-art_5.jpg'"
         class="slider-item-bg-img"
-        alt="">
+        alt="" >
     </div>
     <!-- Slider item content-------------------------------->
     <div class="slider-item-content">
@@ -18,19 +18,20 @@
       <div class="slider-item-content-metadata">
         <!-- rating-------------------------------------------->
         <div class="slider-item-content-metadata-rating mb-1">
-          <i>start-icon</i>
+          <i class="pi pi-star-fill"></i>
           <span>8.0</span>
           <span>/10</span>
         </div>
         <!-- votes-------------------------------------------->
         <div class="slider-item-content-metadata-votes mb-1">
-          <i>vote-icon</i>
+          <i class="pi pi-users"></i>
           <span>4433</span>
         </div>
 
         <!-- release date-------------------------------------------->
         <div class="slider-item-content-metadata-release mb-4">
-          20.06.2024
+          <i class="pi pi-calendar"></i>
+          <span>20.06.2024</span>
         </div>
 
         <!-- description-------------------------------------------->
@@ -41,3 +42,13 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+ <div *ngIf="movies$ | async as movies">
+   <div *ngFor="let movie of movies.results ">
+     {{movie.original_title}}
+   </div>
+ </div>
