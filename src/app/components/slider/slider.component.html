@@ -1,54 +1,58 @@
 
 <!-- Slider --------------->
-<div class="slider">
-  <div class="slider-item">
+<div class="slider" *ngIf="movies$ | async as movies">
+  <ng-container *ngFor="let movie of movies.results; index as movieIndex " >
+  <div
+    class="slider-item"
+    *ngIf="movieIndex === slideIIndex" @sliderFade>
+
+
+
+
     <!-- slider image -------------------------------------->
     <div class="slider-item-bg">
       <img
-        [src]="'https://media.gqmagazine.fr/photos/666c1673c06a06d54cf56aa5/16:9/w_2560%2Cc_limit/key-art_5.jpg'"
+        src="{{'https://image.tmdb.org/t/p/original/'+movie.poster_path}}"
         class="slider-item-bg-img"
         alt="" >
     </div>
     <!-- Slider item content-------------------------------->
     <div class="slider-item-content">
       <!-- Title---------------------------------------------->
-      <h2 class="slider-item-content-title">Slide Title </h2>
+      <h2 class="slider-item-content-title">{{movie.title}} </h2>
 
       <!-- Metadata : rating and votes------------------------>
       <div class="slider-item-content-metadata">
         <!-- rating-------------------------------------------->
         <div class="slider-item-content-metadata-rating mb-1">
           <i class="pi pi-star-fill"></i>
-          <span>8.0</span>
+          <span>{{movie.vote_average}}</span>
           <span>/10</span>
         </div>
         <!-- votes-------------------------------------------->
         <div class="slider-item-content-metadata-votes mb-1">
           <i class="pi pi-users"></i>
-          <span>4433</span>
+          <span>{{movie.vote_count}}</span>
         </div>
 
         <!-- release date-------------------------------------------->
         <div class="slider-item-content-metadata-release mb-4">
           <i class="pi pi-calendar"></i>
-          <span>20.06.2024</span>
+          <span>{{movie.release_date}}</span>
         </div>
 
         <!-- description-------------------------------------------->
         <div class="slider-item-content-metadata-description ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, voluptatum.
+          {{movie.overview}}
+
         </div>
       </div>
     </div>
+    </div>
+  </ng-container>
   </div>
-</div>
 
 
 
 
 
- <div *ngIf="movies$ | async as movies">
-   <div *ngFor="let movie of movies.results ">
-     {{movie.original_title}}
-   </div>
- </div>
