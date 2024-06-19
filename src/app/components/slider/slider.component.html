@@ -4,17 +4,14 @@
   <ng-container *ngFor="let movie of movies.results; index as movieIndex " >
   <div
     class="slider-item"
-    *ngIf="movieIndex === slideIIndex" @sliderFade>
-
-
-
+    *ngIf="movieIndex === slideIIndex" @slideFade>
 
     <!-- slider image -------------------------------------->
     <div class="slider-item-bg">
       <img
-        src="{{'https://image.tmdb.org/t/p/original/'+movie.poster_path}}"
+        [src]=" imagesBaseUrl + imagesSizes.original + movie.poster_path"
         class="slider-item-bg-img"
-        alt="" >
+        [alt]="movie.title" >
     </div>
     <!-- Slider item content-------------------------------->
     <div class="slider-item-content">
@@ -38,7 +35,7 @@
         <!-- release date-------------------------------------------->
         <div class="slider-item-content-metadata-release mb-4">
           <i class="pi pi-calendar"></i>
-          <span>{{movie.release_date}}</span>
+          <span>{{movie.release_date | date : "yyyy"}}</span>
         </div>
 
         <!-- description-------------------------------------------->
