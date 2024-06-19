@@ -1,0 +1,42 @@
+@import "variables"
+.show-item
+  display: block
+  height: 425px
+  position: relative
+  border: 1px solid #999
+  border-radius: 5px
+  box-shadow:  20px 20px 60px #111111,-20px -20px 60px #171717
+  &-image
+    height: 375px
+    img
+      width: 100%
+      border-radius: 5px
+      height: 375px
+      object-fit: cover
+
+  &-rating
+   position: absolute
+   display: flex
+   align-items: center
+   top: 10px
+   left: 10px
+   padding: 5px 10px
+   background-color: rgba(0,0,0,0.5)
+   border-radius: 5px
+   color: $color-text
+
+  .pi
+    font-size: 1.2rem
+    color: $color-icons
+    margin-right: 5px
+
+  &-title
+    display: flex
+    align-items: center
+    height: 48px
+    font-weight: bold
+    background-color: black
+    color: $color-text
+    border-radius: 0 5px 5px 0
+    padding: 0 10px
+

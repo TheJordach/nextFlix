@@ -1,0 +1,16 @@
+<a href="#" class="show-item container" *ngIf="moviesCard$ | async as movies">
+  <ng-container *ngFor="let movie of movies.results; index as movieIndex " >
+  <div class="show-item-rating">
+    <i class="pi pi-star"></i>
+    <span>{{movie.vote_average}}</span>
+  </div>
+  <!---Movie Image------------------------------------------>
+  <div class="show-item-image">
+    <img [src]="imagesBaseUrl + imagesSizes.w780 + movie.poster_path" [alt]="movie.title">
+  </div>
+  <!---Movie Title------------------------------------------>
+  <div class="show-item-title">
+     {{movie.title}}
+  </div>
+  </ng-container>
+</a>
